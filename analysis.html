@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriCtrl - Analyze Ingredients</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/nutrilogo.png" alt="NutriCtrl Logo">
+                <h1>Nutri<span>Ctrl</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#" class="active">Analyze</a></li>
+                    <li><a href="blog.html">blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="analysis">
+        <div class="container">
+            <h2>Enter Food or Ingredients for Analysis</h2>
+            <textarea id="ingredients" placeholder="enter food or ingredients.."></textarea>
+            <button class="btn" onclick="analyzeIngredients()">Analyze Now</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 NutriCtrl. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function analyzeIngredients() {
+            let ingredients = document.getElementById("ingredients").value;
+            if (ingredients.trim() === "") {
+                alert("Please enter food items..");
+                return;
+            }
+            localStorage.setItem("userIngredients", ingredients);
+            window.location.href = "result.html";
+        }
+    </script>
+</body>
+</html>
